@@ -1,0 +1,142 @@
+
+*, *::before,*::after{
+  box-sizing:border-box;
+  padding:0;
+  margin:0; 
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; 
+  user-select: none; 
+}
+
+.highlight{
+  text-shadow:
+    3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color:#f7e018;
+  font-size:4rem;
+}
+
+html,body{
+  height:100%;
+}
+
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:linear-gradient(180deg,#c3feff,#ffc5eb);
+  font-family:Bebas Neue;
+  font-size:1.5rem;
+}
+
+#clock-container{
+  display:flex;
+  flex-direction:column;
+  background-color:white;
+  border:5px solid rgb(247, 224, 24);
+  padding:30px;
+  max-width:370px;
+  text-align:center;
+}
+
+
+#config-section{
+  display:flex; 
+  justify-content:center;
+  align-items:center;
+  margin:10px;
+}
+
+.cfg-elem{
+  display:grid;
+  grid-template-columns:repeat(5,30px);
+  grid-template-rows:repeat(2,30px);
+  grid-template-areas:
+    "title title title title title"
+    ". increment state decrement .";
+  justify-items:center;
+  align-content:center;
+}
+
+#timer-container{
+  border:1px solid black;
+  border-radius:20px;
+  width:250px;
+  height:150px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+#timer-section{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  margin:10px;
+}
+
+#timer-label{
+  font-size:2.5rem; 
+}
+
+#session-label,#break-label{
+  grid-area:title
+}
+
+#session-increment,#break-increment{
+  grid-area:increment
+}
+
+#session-decrement,#break-decrement{
+  grid-area:decrement
+}
+
+#session-length,#break-length{
+  grid-area:state
+}
+
+button{
+  border-radius:50%;
+  background-color:#f7e018;
+  outline:none;
+  border:1px solid black;
+  padding:2px;
+  font-size:0.7rem;
+}
+
+button:hover{
+	animation-name:button_animation;
+	animation-duration:250ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes button_animation{
+	100%{
+		background-color:#000;
+		color:white;
+	}
+}
+
+button:active{
+  transform:translateY(2px);
+}
+
+#control-section{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+}
+
+#control-section > button{
+  width:70px;
+  height:70px;
+}
