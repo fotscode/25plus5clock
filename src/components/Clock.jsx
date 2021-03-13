@@ -180,13 +180,15 @@ class Clock extends React.Component{
         <section id="config-section">
           <div className="cfg-elem">
             <label for="break-length" id="break-label">Break Length</label>
-            <button 
+            <button
+              aria-label="break increment"
               id="break-increment" 
               onClick={this.handleIncrementBreak}
               ><i className="fa fa-arrow-up fa-2x"></i>
             </button>
             <p id="break-length">{this.state.break}</p>
             <button 
+              aria-label="break decrement"
               id="break-decrement"
               onClick={this.handleDecrementBreak}
               ><i className="fa fa-arrow-down fa-2x"></i>
@@ -195,12 +197,14 @@ class Clock extends React.Component{
           <div className="cfg-elem">
             <label id="session-label">Session Length</label>
             <button 
+              aria-label="session increment"
               id="session-increment" 
               onClick={this.handleIncrementSession}
               ><i className="fa fa-arrow-up fa-2x"></i>
             </button>
             <p id="session-length">{this.state.session}</p>
             <button 
+              aria-label="session decrement"
               id="session-decrement" 
               onClick={this.handleDecrementSession}
               ><i className="fa fa-arrow-down fa-2x"></i>
@@ -217,11 +221,15 @@ class Clock extends React.Component{
         <section id="control-section">
           <button 
             id="start_stop" 
+            aria-label="play/stop"
             onClick={this.handleToggle}>
             <i className="fa fa-play fa-2x"></i>
             <i className="fa fa-pause fa-2x"></i>
           </button>
-          <button id="reset" onClick={this.handleReset}>
+          <button 
+            id="reset" 
+            aria-label="refresh"
+            onClick={this.handleReset}>
             <i className="fa fa-refresh fa-2x"></i>
           </button>
         </section>
