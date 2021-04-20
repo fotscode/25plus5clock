@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/25plus5clock/static/js/main.599edd9b.chunk.js",
-    "main.js.map": "/25plus5clock/static/js/main.599edd9b.chunk.js.map",
+    "main.js": "/25plus5clock/static/js/main.3f41a873.chunk.js",
+    "main.js.map": "/25plus5clock/static/js/main.3f41a873.chunk.js.map",
     "runtime-main.js": "/25plus5clock/static/js/runtime-main.b0a6bafd.js",
     "runtime-main.js.map": "/25plus5clock/static/js/runtime-main.b0a6bafd.js.map",
     "static/js/2.5eedfb0c.chunk.js": "/25plus5clock/static/js/2.5eedfb0c.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.b0a6bafd.js",
     "static/js/2.5eedfb0c.chunk.js",
-    "static/js/main.599edd9b.chunk.js"
+    "static/js/main.3f41a873.chunk.js"
   ]
 }
