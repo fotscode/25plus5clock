@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-const audioRef="https://sampleswap.org/samples-ghost/MELODIC%20LOOPS/SYNTH%20AND%20ELECTRONIC%20LOOPS/1382[kb]180_watch-beep-acid-melody.wav.mp3";
+const audioRef="https://sampleswap.org/samples-ghost/SOUND%20EFFECTS%20and%20NOISES/Alarm%20Sounds/238[kb]ding_dong.wav.mp3";
 
 class Clock extends React.Component{
   constructor(props){
@@ -14,7 +14,7 @@ class Clock extends React.Component{
       seconds:"00",
       isRunning:false
     });
-    
+
     this.handleReset=this.handleReset.bind(this);
     this.handleDecrementSession=this.handleDecrementSession.bind(this);
     this.handleDecrementBreak=this.handleDecrementBreak.bind(this);
@@ -23,7 +23,7 @@ class Clock extends React.Component{
     this.tick=this.tick.bind(this);
     this.handleToggle=this.handleToggle.bind(this);
   }
-  
+
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
@@ -31,7 +31,7 @@ class Clock extends React.Component{
     );
     document.getElementById("beep").load();
   }  
-  
+
   componentWillUnmount() {
     clearInterval(this.timerID);
   }
@@ -41,13 +41,13 @@ class Clock extends React.Component{
     let newCurrent=this.state.current;
     let newSeconds=Number(this.state.seconds);
     let newMinutes=Number(this.state.minutes);   
-    
+
     if (this.state.seconds==="01"&&this.state.minutes==="00"){
       document.getElementById("beep").load();
       document.getElementById("beep").play();      
     }
-    
-    
+
+
     if (this.state.seconds==="00"&&this.state.minutes==="00"&&this.state.current==="Session"){
       newCurrent="Break";
       newMinutes=this.state.break;
@@ -77,13 +77,13 @@ class Clock extends React.Component{
       current: newCurrent
     });
   }  
-  
+
   handleToggle(){
     this.setState({
       isRunning:!this.state.isRunning
     });
   }
-  
+
   handleReset(){
     this.setState({
       session:25,
@@ -95,7 +95,7 @@ class Clock extends React.Component{
     });
     document.getElementById("beep").load();
   }
-  
+
   handleDecrementSession(){
     if (this.state.session<=1 || this.state.isRunning) return 
     else{
@@ -114,7 +114,7 @@ class Clock extends React.Component{
       });
     }
   };
-    
+
   handleDecrementBreak(){
     if (this.state.break<=1||this.state.isRunning) return 
     else{
@@ -133,7 +133,7 @@ class Clock extends React.Component{
       });
     }    
   };
-  
+
   handleIncrementSession(){
     if (this.state.session>=60||this.state.isRunning) return
     else{
@@ -152,7 +152,7 @@ class Clock extends React.Component{
       });
     }
   }
-  
+
   handleIncrementBreak(){
     if (this.state.break>=60||this.state.isRunning) return 
     else{
@@ -170,28 +170,28 @@ class Clock extends React.Component{
         seconds:newSeconds
       });
     }    
-    
+
   }
-  
+
   render(){
     return(
       <div id="clock-container">
         <h1 className="highlight">25 + 5 Clock</h1>
         <section id="config-section">
           <div className="cfg-elem">
-            <label for="break-length" id="break-label">Break Length</label>
+            <label htmlFor="break-length" id="break-label">Break Length</label>
             <button
               aria-label="break increment"
               id="break-increment" 
               onClick={this.handleIncrementBreak}
-              ><i className="fa fa-arrow-up fa-2x"></i>
+            ><i className="fa fa-arrow-up fa-2x"></i>
             </button>
             <p id="break-length">{this.state.break}</p>
             <button 
               aria-label="break decrement"
               id="break-decrement"
               onClick={this.handleDecrementBreak}
-              ><i className="fa fa-arrow-down fa-2x"></i>
+            ><i className="fa fa-arrow-down fa-2x"></i>
             </button>
           </div>
           <div className="cfg-elem">
@@ -200,14 +200,14 @@ class Clock extends React.Component{
               aria-label="session increment"
               id="session-increment" 
               onClick={this.handleIncrementSession}
-              ><i className="fa fa-arrow-up fa-2x"></i>
+            ><i className="fa fa-arrow-up fa-2x"></i>
             </button>
             <p id="session-length">{this.state.session}</p>
             <button 
               aria-label="session decrement"
               id="session-decrement" 
               onClick={this.handleDecrementSession}
-              ><i className="fa fa-arrow-down fa-2x"></i>
+            ><i className="fa fa-arrow-down fa-2x"></i>
             </button> 
           </div>
         </section>
